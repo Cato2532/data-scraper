@@ -40,11 +40,16 @@
 
 * **Вход**: веб-страницы сайтов, список стран и базовые пути сохранения:
   - !перед запуском кода нужно добавить папку с соответствующим названием на рабочий стол
-<img width="90" height="289" alt="image" src="https://github.com/user-attachments/assets/177b00b3-3806-4429-a672-701b6dd34c1d" />
+  
+  <img width="237" height="98" alt="image" src="https://github.com/user-attachments/assets/f3de9a21-6531-4f88-97c7-a043ab5d9a7c" />
+
 * **Выход**:  
   - набор Excel по сайтам (`/data/<Site>/<Страна>.xlsx`)
-<img width="370" height="265" alt="image" src="https://github.com/user-attachments/assets/c7f23719-63d4-46f9-8d20-f58bb28184f2" /> <img width="1044" height="621" alt="image" src="https://github.com/user-attachments/assets/b626968a-d528-4049-94aa-f335bb2b8db5" />
+
+  <img width="370" height="265" alt="image" src="https://github.com/user-attachments/assets/c7f23719-63d4-46f9-8d20-f58bb28184f2" /> <img width="1044" height="621" alt="image" src="https://github.com/user-attachments/assets/b626968a-d528-4049-94aa-f335bb2b8db5" />
+
   - общий отчёт `/output/Недвижимость.xlsx` с вкладками по странам
+    
 <img width="953" height="726" alt="image" src="https://github.com/user-attachments/assets/936b0d7b-b937-4f4e-99ec-a290017c2f05" />
 
 ---
