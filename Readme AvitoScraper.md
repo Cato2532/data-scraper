@@ -16,7 +16,7 @@
 
 ---
 
-## Важное замечание ⚠️
+## Важное замечание
 Avito **регулярно меняет классы в HTML-разметке**.  
 В коде это выглядит как:
 ```python
@@ -24,7 +24,7 @@ soup.find_all("div", class_="iva-item-body-oMJBI")
 snippet.find("div", class_="iva-item-title-KE8A9")
 snippet.find("div", class_="price-priceContent-I4I3p")
 snippet.find("div", class_="iva-item-bottomBlock-VewGa")
-
+```
 ---
 
 ## Что делать, если парсер перестал находить данные?
