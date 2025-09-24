@@ -1,2 +1,5 @@
-# data-scraper
-Универсальный парсер данных с сайтов: недвижимость, музыка, маршруты и др.  Python + requests/BS4, Excel-выгрузка, сводные отчёты.  Universal web scraping tool for real estate, music, routes, etc. Python + requests/BS4, Excel export, summary reports.
+# Data Scraper / Универсальный парсер данных
+
+**RU:** Скрипты для извлечения карточек с сайтов (название, цена, инфо), очистка, расчёт метрик (напр., цена за м²), экспорт в Excel и сводный отчёт. Примеры: HomesOverseas/Tranio/Prian, Avito, Яндекс.Музыка, Автодиспетчер.
+
+**EN:** Scripts to extract listing cards from websites (title, price, info), clean data, compute metrics (e.g., €/m²), export to Excel and build a summary report. Examples included for several sites.
