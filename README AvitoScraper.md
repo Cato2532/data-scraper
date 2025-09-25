@@ -1,24 +1,24 @@
 # AvitoScraper
 
-Скрипт для парсинга объявлений с Avito.  
-Позволяет собирать данные о товарах: **название**, **цена**, **дополнительная информация**.  
-Результаты выгружаются в CSV для дальнейшего анализа.
+A script for scraping listings from Avito.  
+It collects product data: **title**, **price**, and **additional information**.  
+Results are exported to CSV for further analysis.
 
 ---
 
-## Как работает
-* Использует `requests` для загрузки HTML-страниц и `BeautifulSoup` для разбора.
-* Сохраняет три поля для каждого объявления:
-  - `name`  — заголовок объявления
-  - `price` — цена (как текст, без нормализации)
-  - `info`  — описание или характеристики
-* Поддерживает защиту от дублей: одинаковые объявления не повторяются в итоговой таблице.
+## How It Works
+* Uses `requests` to load HTML pages and `BeautifulSoup` to parse them.  
+* Saves three fields for each listing:  
+  - `name`  — listing title  
+  - `price` — price (as text, without normalization)  
+  - `info`  — description or product details  
+* Includes duplicate protection: identical listings are not repeated in the final table.  
 
 ---
 
-## Важное замечание
-Avito **регулярно меняет классы в HTML-разметке**.  
-В коде это выглядит как:
+## Important Note
+Avito **regularly changes HTML classes**.  
+In the code, this looks like:  
 ```python
 soup.find_all("div", class_="iva-item-body-oMJBI")
 snippet.find("div", class_="iva-item-title-KE8A9")
@@ -27,11 +27,12 @@ snippet.find("div", class_="iva-item-bottomBlock-VewGa")
 ```
 ---
 
-## Что делать, если парсер перестал находить данные?
-1. Открой нужную страницу **Avito** в браузере.  
-2. Наведи **правой кнопкой мыши** → выбери «Просмотреть код» (или *Inspect*).  
-3. Найди HTML-блок с **названием**, **ценой** или **описанием**.  
-4. Скопируй актуальное значение `class` и замени его в коде парсера.  
+## What to Do If the Scraper Stops Finding Data?
+
+1. Open the desired **Avito** page in your browser.  
+2. Right-click → choose *Inspect*.  
+3. Find the HTML block with **title**, **price**, or **description**.  
+4. Copy the current `class` value and replace it in the scraper code.   
 
 <img width="1433" height="651" alt="image" src="https://github.com/user-attachments/assets/09d22961-a989-41ea-84d1-d9def03aaea6" />
 
