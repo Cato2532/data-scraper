@@ -1,60 +1,60 @@
-# RU — Описание проекта
+# Project Description
 
-## Data Scraper: недвижимость (Tranio / HomesOverseas / Prian)
+## Data Scraper: Real Estate (Tranio / HomesOverseas / Prian)
 
-Скрипты для массового сбора карточек с сайтов, очистки данных и выгрузки в Excel.  
-Поддерживаются: пагинация, дедупликация, обработка ошибок (429/не-200), извлечение площади/комнат, нормализация цены и расчёт *цены за м²*.  
-Есть итоговый консолидированный отчёт: один Excel с отдельным листом на каждую страну.
-
----
-
-## Что внутри (основные фичи)
-
-* **Парсинг HTML**: `requests` + `BeautifulSoup` / `LxmlSoup`, устойчивость к пустым страницам и дублям
-* **Очистка и расчёты**:
-  - парсинг цены и конвертация валют → €
-  - извлечение площади и комнат
-  - расчёт цены за м²
-  - единый набор колонок и нумерация
-* **Экспорт в Excel (openpyxl)**:
-  - «умные таблицы» с итогами и полосами
-  - мини-сводные (средние) на листе
-  - автоформат чисел
-  - мультилистовый файл: по одной вкладке на страну
-* **Агрегация**: чтение файлов по каждому сайту → объединение в один отчёт
-* **Защита от блокировок**: паузы между запросами, повтор при 429
+Scripts for bulk collection of listings from websites, data cleaning, and Excel export.  
+Supports: pagination, deduplication, error handling (429/non-200), extraction of area/rooms, price normalization, and *price per m²* calculation.  
+Includes a final consolidated report: a single Excel file with a separate sheet for each country.
 
 ---
 
-## Полезные кусочки кода (для переиспользования)
+## What’s Inside (Key Features)
 
-* Создание недостающих директорий перед сохранением
-* Шаблон «умной таблицы» в Excel (Table, стиль, итоги)
-* Добавление нескольких листов/таблиц в один файл
-* Мини-сводная с формулами `SUBTOTAL`
-* Универсальные функции для записи DataFrame в Excel с автоформатом
+* **HTML Parsing**: `requests` + `BeautifulSoup` / `LxmlSoup`, resilient to empty pages and duplicates  
+* **Cleaning & Calculations**:  
+  - price parsing and currency conversion → €  
+  - extraction of area and number of rooms  
+  - price per m² calculation  
+  - unified column set and numbering  
+* **Excel Export (openpyxl)**:  
+  - “smart tables” with totals and banded rows  
+  - mini-pivots (averages) on each sheet  
+  - automatic number formatting  
+  - multi-sheet file: one tab per country  
+* **Aggregation**: read files from each site → combine into one consolidated report  
+* **Anti-blocking measures**: delays between requests, retries on 429  
 
 ---
 
-## Вход и выход
+## Useful Code Snippets (Reusable)
 
-* **Вход**: веб-страницы сайтов, список стран и базовые пути сохранения:
-  - !перед запуском кода нужно добавить папку с соответствующим названием на рабочий стол
-  
+* Auto-create missing directories before saving  
+* Template for Excel “smart table” (Table, style, totals)  
+* Adding multiple sheets/tables into one file  
+* Mini-summary with `SUBTOTAL` formulas  
+* Universal functions for writing DataFrames to Excel with auto-formatting  
+
+---
+
+## Input & Output
+
+* **Input**: website pages, list of countries, and base save paths:  
+  - !before running the code, add a folder with the corresponding name on your desktop  
+
   <img width="237" height="98" alt="image" src="https://github.com/user-attachments/assets/f3de9a21-6531-4f88-97c7-a043ab5d9a7c" />
 
-* **Выход**:  
-  - набор Excel по сайтам (`/data/<Site>/<Страна>.xlsx`)
+* **Output**:  
+  - Excel files by site (`/data/<Site>/<Country>.xlsx`)  
 
   <img width="370" height="265" alt="image" src="https://github.com/user-attachments/assets/c7f23719-63d4-46f9-8d20-f58bb28184f2" /> <img width="1044" height="621" alt="image" src="https://github.com/user-attachments/assets/b626968a-d528-4049-94aa-f335bb2b8db5" />
 
-  - общий отчёт `/output/Недвижимость.xlsx` с вкладками по странам
+  - consolidated report `/output/RealEstate.xlsx` with country-level tabs  
     
 <img width="953" height="726" alt="image" src="https://github.com/user-attachments/assets/936b0d7b-b937-4f4e-99ec-a290017c2f05" />
 
 ---
 
-## Ограничения и этика
+## Limitations & Ethics
 
-* Разметка сайтов может меняться — селекторы обновлять по мере необходимости
-* Соблюдать robots.txt и rate-limit (не уменьшать паузы, не завышать `max_pages`)
+* Website markup may change — selectors need updating accordingly  
+* Respect robots.txt and rate-limit (don’t shorten delays, don’t raise `max_pages`)  
